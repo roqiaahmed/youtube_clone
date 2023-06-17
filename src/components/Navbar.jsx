@@ -1,11 +1,12 @@
 import React from 'react'
 import { Stack } from '@mui/material';
-import {  BrowserRouter as Router,Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import {logo} from '../utils/constants';
 import SearchBar from "./SearchBar";
 
 const Navbar = () => {
   return (
+    <Router basename="/">
     <Stack
     direction={'row'}
     alignItems={'center'}
@@ -13,15 +14,14 @@ const Navbar = () => {
     justifyContent={'space-between'}
     sx={{top: '0', position: "sticky", bgcolor: "#000", display: 'flex'}}
     >
-      <Router>
       <Link to="/">
         <img 
-        style={{    width: '40px', height: '40px'}}
+        style={{width: '40px', height: '40px'}}
         src={logo} alt="Logo" />
       </Link>
-      </Router>
       <SearchBar />
     </Stack>
+    </Router>
   )
 }
 
